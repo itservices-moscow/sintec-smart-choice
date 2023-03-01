@@ -6,13 +6,8 @@ import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-htmlmin';
-import { htmlValidator } from 'gulp-w3c-html-validator';
-import bemlinter from 'gulp-html-bemlinter';
-import terser from 'gulp-terser';
-import webp from 'gulp-webp';
-import imagemin from 'gulp-imagemin';
+import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
-import { stacksvg } from 'gulp-stacksvg';
 import { deleteAsync } from 'del';
 import browser from 'browser-sync';
 
@@ -33,28 +28,17 @@ export const styles = () => {
 
 //HTML
 
-export const html = () => {
+const html = () => {
   return gulp.src('source/*.html')
     .pipe(htmlmin({ collapseWhitespace: true, conservativeCollapse: true }))
     .pipe(gulp.dest('build'));
-}
-
-export const validateMarkup = () => {
-	return gulp.src('build/*.html')
-		.pipe(htmlValidator.analyzer())
-		.pipe(htmlValidator.reporter({ throwErrors: true }));
-}
-
-export const lintBem = () => {
-	return gulp.src('build/*.html')
-		.pipe(bemlinter());
 }
 
 // Images
 
 const optimizeImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(imagemin())
+    .pipe(squoosh())
     .pipe(gulp.dest('build/img'));
 }
 
@@ -67,7 +51,9 @@ const copyImages = () => {
 
 const createWebp = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(webp())
+    .pipe(squoosh({
+      webp: {},
+    }))
     .pipe(gulp.dest('build/img'));
 }
 
