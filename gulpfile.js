@@ -50,15 +50,6 @@ export const lintBem = () => {
 		.pipe(bemlinter());
 }
 
-// Scripts
-
-const scripts = () => {
-  return gulp.src('source/js/*.js')
-    .pipe(terser())
-    .pipe(gulp.dest('build/js'))
-    .pipe(browser.stream());
-}
-
 // Images
 
 const optimizeImages = () => {
@@ -142,7 +133,6 @@ const reload = (done) => {
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series(styles));
-  gulp.watch('source/js/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html)).on('change', browser.reload);
 }
 
@@ -156,7 +146,6 @@ export const build = gulp.series(
   gulp.parallel(
     styles,
     html,
-    scripts,
     svg,
     sprite,
     createWebp
@@ -172,7 +161,6 @@ export default gulp.series(
   gulp.parallel(
     styles,
     html,
-    scripts,
     svg,
     sprite,
     createWebp
