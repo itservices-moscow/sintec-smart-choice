@@ -78,16 +78,6 @@ const svg = () =>
     .pipe(svgo())
     .pipe(gulp.dest('build/img'));
 
-const sprite = () => {
-  return gulp.src('source/img/icons/*.svg')
-    .pipe(svgo())
-    .pipe(stacksvg({
-      output: 'sprite'
-    }))
-    .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('build/img'));
-}
-
 // Copy
 
 const copy = (done) => {
@@ -147,7 +137,6 @@ export const build = gulp.series(
     styles,
     html,
     svg,
-    sprite,
     createWebp
   ),
 );
@@ -162,7 +151,6 @@ export default gulp.series(
     styles,
     html,
     svg,
-    sprite,
     createWebp
   ),
   gulp.series(
