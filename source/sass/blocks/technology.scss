@@ -2,7 +2,7 @@
 
 .technology {
   padding: 40px 0 0 0;
-  margin-bottom: -3px;
+  margin-bottom: -53px;
   background-image: url("../img/technology-car-mobile@1x.png"),
     url("../img/technology-bg-mobile@1x.png");
   background-repeat: no-repeat;
@@ -48,14 +48,6 @@
   @media (min-width: var.$desktop-width) {
     grid-template-columns: repeat(12, 1fr);
   }
-
-  picture {
-    @media (min-width: var.$desktop-width) {
-      grid-column: 1 / -2;
-      grid-row: 1 / -1;
-      margin: 117px -30px 0 370px;
-    }
-  }
 }
 
 .technology__text-wrapper {
@@ -70,6 +62,16 @@
     grid-column: 1 / 6;
     grid-row: 1 / -1;
     margin-left: -4px;
+  }
+}
+
+.technology__picture-wrapper {
+  margin: 0 0 0 -145px;
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / -2;
+    grid-row: 1 / -1;
+    margin: 117px -30px 0 370px;
   }
 }
 
@@ -103,11 +105,11 @@
 .technology__img {
   display: block;
   margin: 0 auto;
-  height: 360px;
+  width: auto;
+  min-height: 410px;
 
   @media (min-width: var.$tablet-width) {
     margin: 0;
-    width: auto;
   }
 
   @media (min-width: var.$desktop-width) {

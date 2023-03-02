@@ -3,6 +3,7 @@
 .quality {
   position: relative;
   padding: 40px 0;
+  margin-bottom: -47px;
   background-image: url("../img/quality-bg-mobile@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,6 +14,7 @@
 
   @media (min-width: var.$tablet-width) {
     padding: 60px 0 0 0;
+    margin-bottom: 0;
   }
 
   @media (min-width: var.$desktop-width) {
@@ -39,20 +41,6 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
     column-gap: 5px;
-  }
-
-  picture {
-    @media (min-width: var.$tablet-width) {
-      grid-column: 1 / 2;
-      grid-row: 1 / -1;
-      justify-self: center;
-    }
-
-    @media (min-width: var.$desktop-width) {
-      grid-column: 1 / 9;
-      margin: 0 0 0 -325px;
-      justify-self: unset;
-    }
   }
 }
 
@@ -83,12 +71,31 @@
   }
 }
 
+.quality__picture-wrapper {
+  margin: 45px 0 0 -165px;
+  position: relative;
+
+  @media (min-width: var.$tablet-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 9;
+    margin: 0 0 0 -325px;
+    justify-self: unset;
+  }
+}
+
 .quality__img {
   position: absolute;
   bottom: 50px;
   left: 50%;
   display: block;
   margin: 0 auto;
+  width: auto;
+  min-height: 330px;
   transform: translateX(-50%);
 
   @media (min-width: var.$tablet-width) {
