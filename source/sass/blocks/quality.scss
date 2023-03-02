@@ -3,12 +3,12 @@
 .quality {
   position: relative;
   padding: 40px 0;
-  background-image: url("../img/quality-background-mobile@1x.png");
+  background-image: url("../img/quality-bg-mobile@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/quality-background-mobile@2x.png");
+    background-image: url("../img/quality-bg-mobile@2x.png");
   }
 
   @media (min-width: var.$tablet-width) {
@@ -18,10 +18,10 @@
   @media (min-width: var.$desktop-width) {
     padding: 152px 0 0 0;
     margin-bottom: -2px;
-    background-image: url("../img/quality-background-desktop@1x.png");
+    background-image: url("../img/quality-bg-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/quality-background-desktop@2x.png");
+      background-image: url("../img/quality-bg-desktop@2x.png");
     }
   }
 }
