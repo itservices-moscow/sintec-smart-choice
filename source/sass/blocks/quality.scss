@@ -1,0 +1,120 @@
+@use "../global/variable.scss" as var;
+
+.quality {
+  position: relative;
+  padding: 40px 0;
+  background-image: url("../img/quality-background-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/quality-background-mobile@2x.png");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    padding: 60px 0 0 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 152px 0 0 0;
+    margin-bottom: -2px;
+    background-image: url("../img/quality-background-desktop@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/quality-background-desktop@2x.png");
+    }
+  }
+}
+
+.quality__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    justify-content: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 5px;
+  }
+
+  picture {
+    @media (min-width: var.$tablet-width) {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+      justify-self: center;
+    }
+
+    @media (min-width: var.$desktop-width) {
+      grid-column: 1 / 9;
+      margin: 0 0 0 -325px;
+      justify-self: unset;
+    }
+  }
+}
+
+.quality__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 9 / -1;
+    min-width: 490px;
+    margin-right: 8px;
+    justify-self: unset;
+  }
+}
+
+.quality__message {
+  margin: 0 0 318px 0;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0 0 20px 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    margin: 0 0 60px 0;
+  }
+}
+
+.quality__img {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  display: block;
+  margin: 0 auto;
+  transform: translateX(-50%);
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+    width: auto;
+    position: static;
+    bottom: unset;
+    left: unset;
+    transform: unset;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 630px;
+  }
+}
+
+.quality__button {
+  @media (min-width: var.$tablet-width) {
+    max-width: 305px;
+  }
+}
+
+.quality__break {
+  display: none;
+
+  @media (min-width: var.$desktop-width) {
+    display: inline;
+  }
+}

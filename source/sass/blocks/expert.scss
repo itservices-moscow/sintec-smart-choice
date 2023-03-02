@@ -1,0 +1,81 @@
+@use "../global/variable.scss" as var;
+
+.expert {
+  padding: 60px 0 0 0;
+  background-image: url("../img/expert-bg-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/expert-bg-mobile@2x.png");
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 265px 0 0 0;
+    margin-bottom: -4px;
+    background-image: url("../img/expert-bg-desktop@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/expert-bg-desktop@2x.png");
+    }
+  }
+}
+
+.expert__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    align-items: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+    align-items: unset;
+  }
+
+  picture {
+    @media (min-width: var.$tablet-width) {
+      justify-self: center;
+    }
+
+    @media (min-width: var.$desktop-width) {
+      grid-column: 1 / 8;
+      margin: -115px 0 0 -255px;
+    }
+  }
+}
+
+.expert__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 8 / -1;
+    margin-left: 6px;
+  }
+}
+
+.expert__title {
+  margin: 0 0 40px 0;
+}
+
+.expert__img {
+  display: block;
+  margin: 57px auto 0 auto;
+  min-height: 282px;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+    width: auto;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 632px;
+  }
+}

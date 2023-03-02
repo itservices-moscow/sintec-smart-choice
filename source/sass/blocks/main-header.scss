@@ -1,0 +1,117 @@
+@use "../global/variable.scss" as var;
+
+.main-header {
+  padding: 40px 0 0 0;
+  margin-bottom: -2px;
+  background-image: url("../img/hero-background-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/hero-background-mobile@2x.png");
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 40px 0 0 0;
+    margin: 0;
+    background-image: url("../img/hero-background-desktop@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/hero-background-desktop@2x.png");
+    }
+  }
+}
+
+.main-header__title {
+  max-width: 330px;
+  margin: 65px auto 68px auto;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: var.$tablet-width) {
+    margin: -90px 0 0 7px;
+    max-width: 310px;
+    text-align: left;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    max-width: 585px;
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+    font-size: 60px;
+    line-height: 70px;
+    justify-self: start;
+  }
+}
+
+.main-header__img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: 345px;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 638px;
+  }
+}
+
+.main-header__logo {
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.main-header__logo-img {
+  @media (min-width: var.$desktop-width) {
+    width: 93px;
+    height: 50px;
+    margin-left: 6px;
+  }
+}
+
+.main-header__wrapper {
+  margin-left: -15px;
+
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    padding: 56px 0 0 0;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+    margin: -5px 0 -3px 0;
+  }
+
+  picture {
+    @media (min-width: var.$tablet-width) {
+      justify-self: center;
+    }
+
+    @media (min-width: var.$desktop-width) {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      justify-self: unset;
+      margin: 0 -60px 0 390px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../global/variable.scss" as var;
+
+.lead {
+  max-width: 300px;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  &--accent {
+    color: var.$white;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    max-width: 490px;
+    font-size: 32px;
+    line-height: 38px;
+  }
+}

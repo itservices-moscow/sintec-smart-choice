@@ -1,0 +1,13 @@
+@use "../global/variable.scss" as var;
+
+.page-body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-width: var.$mobile-width;
+  font-family: var.$primary-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var.$nero;
+  background-color: var.$white;
+}

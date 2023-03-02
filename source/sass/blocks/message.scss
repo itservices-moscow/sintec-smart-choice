@@ -1,0 +1,19 @@
+@use "../global/variable.scss" as var;
+
+.message {
+  max-width: 300px;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+
+  &--accent {
+    color: var.$white;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 490px;
+  }
+}

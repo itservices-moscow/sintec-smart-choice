@@ -1,0 +1,68 @@
+@use "../global/variable.scss" as var;
+
+.main-footer {
+  padding: 40px 0;
+  background-color: var.$navy-blue;
+
+  @media (min-width: var.$tablet-width) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 80px 0;
+  }
+}
+
+.main-footer__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    justify-content: start;
+  }
+}
+
+.main-footer__text {
+  max-width: 300px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+
+  @media (min-width: var.$tablet-width) {
+    max-width: unset;
+    margin: 0 40px 0 0;
+    text-align: left;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    margin: 0 110px 0 9px;
+    font-size: 38px;
+    line-height: 54px;
+  }
+}
+
+.main-footer__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  color: var.$navy-blue;
+  background-color: var.$white;
+  border-radius: 10px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (min-width: var.$tablet-width) {
+    max-width: 217px;
+  }
+}
