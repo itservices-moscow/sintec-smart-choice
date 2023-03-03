@@ -69,18 +69,6 @@
   }
 }
 
-.main-header__logo {
-  transition: all 0.3s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-}
-
 .main-header__logo-img {
   @media (min-width: var.$desktop-width) {
     width: 93px;
