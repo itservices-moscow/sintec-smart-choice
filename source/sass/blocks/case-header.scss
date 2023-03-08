@@ -147,6 +147,8 @@
 .case-header__button {
   margin: 10px 0 0 0;
   font-size: 18px;
+  /*временно, пока не появится ссылка*/
+  display: none;
 
   @media (min-width: var.$tablet-width) {
     max-width: 270px;
