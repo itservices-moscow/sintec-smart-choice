@@ -1,0 +1,104 @@
+@use "../global/variable.scss" as var;
+
+.antiwear {
+  padding: 25px 0 0 0;
+  margin: 0 0 -32px 0;
+  background-image: url("../img/case/antiwear-car-mobile@1x.png"),
+    url("../img/case/antiwear-bg-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  background-position: left 0 top -18px, center;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/case/antiwear-car-mobile@2x.png"),
+      url("../img/case/antiwear-bg-mobile@2x.png");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    padding: 25px 0 0 0;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    background-image: url("../img/case/antiwear-car-desktop@1x.png"),
+      url("../img/case/antiwear-bg-desktop@1x.png");
+    padding: 127px 0 2px 0;
+    background-position: left 0 top 0, center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/case/antiwear-car-desktop@2x.png"),
+        url("../img/case/antiwear-bg-desktop@2x.png");
+    }
+  }
+
+  @media (min-width: var.$desktop-width) and (max-width: 1850px) {
+    background-position: left -220px top 0, center;
+  }
+}
+
+.antiwear__title {
+  margin: 0 0 93px 0;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+}
+
+.antiwear__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 8 / -1;
+    grid-row: 1 / -1;
+    justify-self: unset;
+    margin: -120px 0 0 0;
+  }
+}
+
+.antiwear__img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  min-height: 410px;
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 650px;
+  }
+}
+
+.antiwear__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 70px;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+.antiwear__picture-wrapper {
+  margin: 0 0 0 -80px;
+
+  @media (min-width: var.$tablet-width) {
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+    justify-self: unset;
+    margin: 0 0 0 -190px;
+  }
+}
+

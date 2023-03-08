@@ -17,6 +17,7 @@
   @media (min-width: var.$desktop-width) {
     background-image: url("../img/case/molybdenum-bg-desktop@1x.png");
     padding: 142px 0 0 0;
+    margin: 0 0 -4px 0;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/case/molybdenum-bg-desktop@2x.png");
