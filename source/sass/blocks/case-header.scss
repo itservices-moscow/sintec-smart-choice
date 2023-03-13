@@ -23,7 +23,6 @@
   font-weight: 400;
   font-size: 32px;
   line-height: 40px;
-  text-transform: uppercase;
   text-align: center;
 
   @media (min-width: var.$tablet-width) {
@@ -37,6 +36,10 @@
     line-height: 70px;
     justify-self: start;
   }
+}
+
+.case-header__part {
+  text-transform: uppercase;
 }
 
 .case-header__lead {
