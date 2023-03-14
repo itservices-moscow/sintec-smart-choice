@@ -53,7 +53,6 @@
   display: block;
   margin: 0 auto;
   width: auto;
-  min-height: 310px;
 
   @media (min-width: var.$desktop-width) {
     min-height: 642px;
@@ -76,7 +75,7 @@
 }
 
 .molybdenum__picture-wrapper {
-  margin: 0 0 0 -95px;
+  margin: 0 0 0 -15px;
 
   @media (min-width: var.$tablet-width) {
     justify-self: center;
