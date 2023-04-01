@@ -3,6 +3,7 @@
 .main-footer {
   padding: 40px 0;
   background-color: var.$navy-blue;
+  z-index: 3;
 
   @media (min-width: var.$tablet-width) {
     padding: 60px 0;
