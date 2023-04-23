@@ -1,0 +1,110 @@
+@use "../global/variable.scss" as var;
+
+.history {
+  padding: 80px 0 0 0;
+  margin: 0 0 -13px 0;
+  background-image: url("../img/assortment-bg-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/assortment-bg-mobile@2x.jpg");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 151px 0 107px 0;
+    background-image: url("../img/assortment-bg-desktop@1x.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/assortment-bg-desktop@2x.jpg");
+    }
+  }
+}
+
+.history__title {
+  margin: 0;
+
+  @media (min-width: var.$tablet-width) {
+    max-width: 385px;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    max-width: 490px;
+    justify-self: start;
+  }
+}
+
+.history__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 6;
+    justify-self: unset;
+    margin: -40px 0 0 7px;
+  }
+}
+
+.history__img {
+  display: block;
+  width: auto;
+  min-height: 522px;
+  margin: 0 auto;
+
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 522px;
+  }
+}
+
+.history__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 70px;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+  }
+}
+
+.history__picture-wrapper {
+  margin: -45px 0 0 0;
+
+  @media (min-width: var.$tablet-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    justify-self: center;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+    justify-self: unset;
+    margin: 0 0 0 55px;
+  }
+}
+
+.history__break {
+  @media (min-width: var.$tablet-width) {
+    display: none;
+  }
+}
