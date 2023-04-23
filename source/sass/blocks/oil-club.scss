@@ -1,0 +1,134 @@
+@use "../global/variable.scss" as var;
+
+.oil-club {
+  padding: 40px 0 0 0;
+  margin: 0 0 -98px 0;
+  background-image: url("../img/long/oil-club-decor.svg"),
+    url("../img/long/oil-club-bg-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: 512px 418px, cover;
+  background-position: 50% 59%;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/long/oil-club-decor.svg"),
+      url("../img/long/oil-club-bg-mobile@2x.png");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    background-image: url("../img/long/oil-club-bg-mobile@1x.png");
+    background-size: cover;
+    background-position: unset;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/long/oil-club-bg-mobile@2x.png");
+    }
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 780px;
+    padding: 0;
+    background-image: url("../img/long/oil-club-bg-desktop@1x.png");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/long/oil-club-bg-desktop@2x.png");
+    }
+  }
+}
+
+.oil-club__title {
+  margin: 0 0 20px 0;
+
+  @media (min-width: var.$tablet-width) {
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    justify-self: start;
+    max-width: 480px;
+    margin: 0 0 40px 0;
+  }
+}
+
+.oil-club__lead {
+  max-width: 330px;
+  margin: 0 0 79px 0;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    max-width: 490px;
+  }
+}
+
+.oil-club__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    margin: -70px 0 0 0;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 8 / -1;
+    justify-self: unset;
+    margin: -50px 0 0 16px;
+  }
+}
+
+.oil-club__img {
+  display: block;
+  width: auto;
+  min-height: 520px;
+  margin: 0 auto;
+
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 645px;
+  }
+}
+
+.oil-club__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+  }
+}
+
+.oil-club__picture-wrapper {
+  position: relative;
+  margin: 0 0 0 -150px;
+
+  @media (min-width: var.$tablet-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    justify-self: center;
+    margin: 0 0 0 -110px;
+    background-image: url("../img/long/oil-club-decor.svg");
+    background-repeat: no-repeat;
+    background-size: 400px 327px;
+    background-position: left 80% top 20%;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 8;
+    justify-self: unset;
+    margin: 0 0 0 -120px;
+    padding: 134px 0 96px 0;
+    background-size: 802px 655px;
+    background-position: left 50px top 25px;
+  }
+}
