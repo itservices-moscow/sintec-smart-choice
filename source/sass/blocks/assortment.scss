@@ -19,6 +19,7 @@
   @media (min-width: var.$desktop-width) {
     padding: 72px 0 67px 0;
     background-image: url("../img/assortment-bg-desktop@1x.jpg");
+    overflow: hidden;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/assortment-bg-desktop@2x.jpg");

@@ -23,8 +23,8 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    padding: 265px 0 0 0;
-    margin-bottom: -4px;
+    padding: 240px 0 0 0;
+    margin-bottom: 0;
   }
 }
 
@@ -53,12 +53,12 @@
 
   @media (min-width: var.$desktop-width) {
     grid-column: 8 / -1;
-    margin-left: 6px;
+    margin: 30px 0 0 6px;
   }
 }
 
 .expert__picture-wrapper {
-  margin: 0 0 0 -40px;
+  margin: 65px 0 0 -70px;
 
   @media (min-width: var.$tablet-width) {
     justify-self: center;
@@ -80,9 +80,9 @@
 
 .expert__img {
   display: block;
-  margin: -40px auto -46px auto;
+  margin: 0 auto -59px auto;
   width: auto;
-  min-height: 365px;
+  min-height: 292px;
 
   @media (min-width: var.$tablet-width) {
     margin: 0;

@@ -2,7 +2,7 @@
 
 .main-header {
   padding: 40px 0 0 0;
-  margin-bottom: -2px;
+  margin-bottom: -8px;
   background-image: url("../img/hero-bg-mobile@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,8 +12,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    padding: 40px 0 0 0;
-    margin: 0;
+    padding: 40px 0 16px 0;
     background-image: url("../img/hero-bg-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
@@ -24,7 +23,7 @@
 
 .main-header__title {
   max-width: 330px;
-  margin: 65px auto 68px auto;
+  margin: 65px auto 40px auto;
   font-weight: 400;
   font-size: 32px;
   line-height: 40px;
@@ -59,13 +58,14 @@
   display: block;
   margin: 0 auto;
   width: auto;
+  min-height: 380px;
 
   @media (min-width: var.$tablet-width) {
     margin: 0;
   }
 
   @media (min-width: var.$desktop-width) {
-    min-height: 638px;
+    min-height: 647px;
   }
 }
 
@@ -98,7 +98,7 @@
 }
 
 .main-header__picture-wrapper {
-  margin: 0 0 0 -170px;
+  margin: 0 0 0 -178px;
 
   @media (min-width: var.$tablet-width) {
     justify-self: center;
@@ -108,7 +108,7 @@
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     justify-self: unset;
-    margin: 0 -60px 0 390px;
+    margin: -18px -60px 0 390px;
   }
 
   @media (min-width: var.$desktop-width) and (max-width: 1420px) {

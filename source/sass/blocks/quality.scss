@@ -3,7 +3,7 @@
 .quality {
   position: relative;
   padding: 40px 0;
-  margin-bottom: -47px;
+  margin-bottom: -46px;
   background-image: url("../img/quality-bg-mobile@1x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,7 +19,7 @@
 
   @media (min-width: var.$desktop-width) {
     padding: 152px 0 0 0;
-    margin-bottom: -2px;
+    margin-bottom: -1px;
     background-image: url("../img/quality-bg-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
@@ -83,19 +83,19 @@
 
   @media (min-width: var.$desktop-width) {
     grid-column: 1 / 9;
-    margin: 0 0 0 -325px;
+    margin: -5px 0 0 -325px;
     justify-self: unset;
   }
 }
 
 .quality__img {
   position: absolute;
-  bottom: 50px;
+  bottom: 52px;
   left: 50%;
   display: block;
   margin: 0 auto;
   width: auto;
-  min-height: 330px;
+  min-height: 335px;
   transform: translateX(-50%);
 
   @media (min-width: var.$tablet-width) {
