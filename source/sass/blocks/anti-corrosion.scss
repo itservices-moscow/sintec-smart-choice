@@ -12,7 +12,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    padding: 134px 0 53px 0;
+    padding: 106px 0 53px 0;
     background-image: url("../img/assortment-bg-desktop@1x.jpg");
 
     @media (min-resolution: 2dppx) {
@@ -22,7 +22,7 @@
 }
 
 .anti-corrosion__title {
-  margin: 0 auto 74px auto;
+  margin: 0 auto 58px auto;
   text-align: center;
 
   @media (min-width: var.$tablet-width) {
@@ -53,7 +53,7 @@
 .anti-corrosion__img {
   display: block;
   width: auto;
-  min-height: 293px;
+  min-height: 315px;
   margin: 0 auto;
 
 
@@ -62,7 +62,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    min-height: 585px;
+    min-height: 615px;
   }
 }
 
@@ -82,7 +82,7 @@
 }
 
 .anti-corrosion__picture-wrapper {
-  margin: 0 3px 0 0;
+  margin: 0 -10px 0 0;
 
   @media (min-width: var.$tablet-width) {
     grid-column: 2 / -1;

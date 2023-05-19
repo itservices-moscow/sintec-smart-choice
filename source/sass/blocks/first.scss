@@ -17,7 +17,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    padding: 170px 0 0 0;
+    padding: 140px 0 0 0;
     background-image: url("../img/antifreeze/bg-first-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
@@ -27,7 +27,7 @@
 }
 
 .first__title {
-  margin: 0 0 181px 0;
+  margin: 0 0 160px 0;
 
   @media (min-width: var.$tablet-width) {
     max-width: 385px;
@@ -51,14 +51,14 @@
   @media (min-width: var.$desktop-width) {
     grid-column: 9 / -1;
     justify-self: unset;
-    margin: -220px 0 0 20px;
+    margin: -200px 0 0 20px;
   }
 }
 
 .first__img {
   display: block;
   width: auto;
-  min-height: 348px;
+  min-height: 365px;
   margin: 0 auto;
 
 

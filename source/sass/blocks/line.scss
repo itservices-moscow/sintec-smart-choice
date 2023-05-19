@@ -12,7 +12,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    padding: 40px 0 0 0;
+    padding: 44px 0 0 0;
     background-image: url("../img/antifreeze/bg-line-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
@@ -22,7 +22,7 @@
 }
 
 .line__title {
-  margin: 0 0 84px 0;
+  margin: 0 0 79px 0;
 
   @media (min-width: var.$tablet-width) {
     max-width: 490px;
@@ -53,7 +53,7 @@
 .line__img {
   display: block;
   width: auto;
-  min-height: 326px;
+  min-height: 330px;
   margin: 0 auto 22px auto;
 
 
@@ -62,7 +62,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    min-height: 600px;
+    min-height: 605px;
   }
 }
 

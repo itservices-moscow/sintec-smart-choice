@@ -9,6 +9,7 @@
   }
 
   @media (min-width: var.$desktop-width) {
+    padding: 40px 0 7px 0;
     background-image: url("../img/antifreeze/bg-antifreeze-desktop@1x.png");
 
     @media (min-resolution: 2dppx) {
@@ -75,7 +76,7 @@
 }
 
 .antifreeze-header__text-wrapper {
-  margin: 0 0 42px 0;
+  margin: 0 0 32px 0;
 
   @media (min-width: var.$tablet-width) {
     margin: -70px 0 0 0;
@@ -86,7 +87,7 @@
     grid-column: 1 / 5;
     grid-row: 1 / -1;
     justify-self: unset;
-    margin: -112px 0 0 7px;
+    margin: -105px 0 0 7px;
   }
 }
 
@@ -101,12 +102,12 @@
   }
 
   @media (min-width: var.$desktop-width) {
-    min-height: 690px;
+    min-height: 670px;
   }
 }
 
 .antifreeze-header__box {
-  margin: 0 0 -16px 0;
+  margin: 0 0 -9px 0;
 
   @media (min-width: var.$tablet-width) {
     margin: 0;
@@ -131,7 +132,7 @@
 }
 
 .antifreeze-header__picture-wrapper {
-  margin: 0 0 0 -130px;
+  margin: 0 0 0 -140px;
 
   @media (min-width: var.$tablet-width) {
     justify-self: center;
@@ -142,6 +143,6 @@
     grid-column: 4 / -1;
     grid-row: 1 / -1;
     justify-self: unset;
-    margin: -5px -55px 0 85px;
+    margin: 13px -55px 0 90px;
   }
 }
