@@ -1,0 +1,451 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  @media (min-width:$pc){
+    min-height: rem(780);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      @media (min-width:$mobile){
+        width: rem(1920);
+        height: rem(780);
+        min-height: 100%;
+        min-width: 100%;
+      }
+      @media (max-width:$mobile){
+        object-position: bottom center;
+      }
+    }
+  }
+
+  &__auto {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    img  {
+      max-width: 100%;
+    }
+    @media (min-width:$pc){
+      max-width: 67%;
+    }
+    @media (min-width:$mobile){
+      top: 0;
+    }
+    @media (max-width:$pc) and (min-width: $mobile) {
+      display: none;
+    }
+    @media (max-width:$mobile){
+      bottom: 0;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 3;
+    @include adaptiveValue("padding-top", 140, 120, 1300, 480, 1);
+    @include adaptiveValue("padding-bottom", 64, 38, 1300, 480, 1);
+    .hero_anifreeze_2 & {
+      @include adaptiveValue("padding-top", 120, 40, 1300, 480, 1);
+      @media (max-width:$mobile){
+        gap: rem(73);
+      }
+    }
+    .hero_zero & {
+      @include adaptiveValue("padding-top", 160, 60, 1300, 480, 1);
+    }
+    .hero_index & {
+      @include adaptiveValue("padding-top", 110, 40, 1300, 480, 1);
+    }
+    .hero_care_2 & {
+      @include adaptiveValue("padding-top", 120, 110, 1300, 480, 1);
+    }
+    .hero_anifreeze & {
+      @media (min-width:$mobile){
+        padding-top: rem(116);
+        padding-bottom: rem(15);
+      }
+      @media (max-width:$mobile){
+        padding-top: rem(120);
+        padding-bottom: rem(5);
+      }
+    }
+    align-items: center;
+    display: grid;
+    @media (min-width:$pc){
+      grid-template-columns: repeat(12, 1fr);
+    }
+    @media (max-width:$pc) and (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width:$mobile){
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: rem(10);
+      .hero_zero &,
+      .hero_anifreeze_2 &,
+      .hero_index &,
+      .hero_care_2 & {
+        text-align: left;
+      }
+    }
+  }
+
+  &__content {
+    max-width: rem(612);
+    line-height: math.div(70 , 60);
+    text-transform: uppercase;
+    @media (min-width:$pc){
+      grid-column: 1 / 6;
+      .hero_care & {
+        grid-column: 1 / 7;
+      }
+
+      .hero_zero & {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 60, 32, 1300, 480, 1);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 12, 1300, 480, 1);
+    }
+    .hero_anifreeze & {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    }
+
+    &_fw {
+      @media (max-width:$mobile){
+        font-family: 'Gotham Pro' !important;
+      }
+      .hero_zero_2  &.hero__title_2 {
+        @include adaptiveValue("font-size", 50, 32, 1300, 480, 1);
+        text-transform: uppercase;
+        @media (min-width:$mobileSmall){
+          line-height: math.div(70 , 50);
+        }
+        @media (max-width:$mobileSmall){
+          line-height: math.div(44.8 , 32);
+        }
+      }
+    }
+
+    .hero_long & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(35.2 , 32);
+      }
+    }
+
+    .hero_index_2 & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(40 , 32);
+      }
+    }
+
+    .hero_anifreeze & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(40 , 32);
+      }
+    }
+  }
+
+  &__title_2 {
+    @include adaptiveValue("font-size", 60, 32, 1300, 480, 1);
+    text-transform: none;
+    font-weight: 400;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 20, 1300, 480, 1);
+    }
+
+    .hero_care & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(40 , 32);
+      }
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 38, 20, 1300, 480, 1);
+
+    .hero_index & {
+      @include adaptiveValue("font-size", 38, 24, 1300, 480, 1);
+      &:not(:last-child) {margin-bottom: rem(20);}
+      line-height: math.div(49.4 , 38);
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .experience_index & {
+      font-weight: 600;
+      @media (min-width:$mobileSmall){
+        line-height: math.div(49.4 , 38);
+      }
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 60, 20, 1300, 480, 1);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .experience_care & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(54 , 38);
+      }
+      &:not(:last-child) {margin-bottom: rem(20);}
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .hero_zero & {
+      @include adaptiveValue("font-size", 38, 24, 1300, 480, 1);
+      @media (min-width:$mobile){
+        font-weight: 500;
+      }
+      @media (min-width:$mobileSmall){
+        line-height: math.div(53.2,38);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .experience_zero & {
+      @include adaptiveValue("font-size", 48, 24, 1300, 480, 1);
+      @media (min-width:$mobile){
+        line-height: math.div(67.2 , 48);
+      }
+      @media (max-width:$mobile){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .hero_anifreeze_2 & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(54 , 38);
+      }
+      @media (max-width:$mobileSmall){
+        font-size: rem(32);
+        line-height: math.div(40 , 32);
+      }
+    }
+    
+    .hero_long & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(54,38);
+      }
+    }
+
+    .hero_zero_2  & {
+      @include adaptiveValue("font-size", 37, 20, 1300, 480, 1);
+      @media (min-width:$mobileSmall){
+        line-height: math.div(59.2 , 37);
+      }
+    }
+
+    .experience_long & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(49.4 , 38);
+      }
+    }
+
+    .hero_care_2 & {
+      @include adaptiveValue("font-size", 38, 24, 1300, 480, 1);
+      @media (min-width:$mobileSmall){
+        line-height: math.div(53.2 , 38);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+        margin-bottom: rem(70);
+      }
+    }
+
+    .experience_antifreeze & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(54 , 38);
+      }
+      @media (max-width:$mobileSmall){
+        text-align: center;
+        line-height: math.div(32 , 24);
+      }
+    }
+  }
+
+  &__smalltext {
+    @include adaptiveValue("font-size", 32, 20, 1300, 480, 1);
+    .experience_index & {
+      text-transform: none;
+      @media (min-width:$pc){
+        max-width: rem(490);
+      }
+      @media (min-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 60, 0, 1300, 480, 1);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+
+    .hero_care & {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 60, 0, 1300, 480, 1);
+      }
+    }
+
+    .hero_anifreeze & {
+      @include adaptiveValue("font-size", 32, 24, 1300, 480, 1);
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 10, 1300, 480, 1);
+      }
+      @media (min-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .hero_care & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+  }
+
+  &__middletext {
+    @include adaptiveValue("font-size", 28, 20, 1300, 480, 1);
+    &:not(:last-child) {margin-bottom: rem(20);}
+    @media (max-width:$mobile){
+      text-transform: none;
+    }
+
+    .experience_zero & {
+      @media (min-width:$mobile){
+        line-height: math.div(44.8 , 28);
+      }
+      @media (max-width:$mobile){
+        line-height: math.div(24 , 20);
+      }
+    }
+
+    .hero_zero & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(44.8 , 28);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+  }
+
+  &__smallertext {
+    @include adaptiveValue("font-size", 18, 14, 1300, 480, 1);
+    text-transform: none;
+    &:not(:last-child) {margin-bottom: rem(20);}
+    .hero_index & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(21.6 , 18);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(16.8 , 14);
+      }
+    }
+
+    .experience_care & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(21.6 , 18);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(16.8 , 14);
+      }
+    }
+  }
+
+  &__label {
+    color: #808080;
+    font-size: rem(12);
+    text-transform: none;
+    line-height: math.div(14.4 , 12);
+    .hero_index & {
+      line-height: math.div(14.4 , 12);
+    }
+  }
+
+  &__image {
+    img {
+      @media (min-width:$pc){
+        max-width: 135%;
+      }
+      @media (orientation: landscape){
+        max-height: 30vw;
+      }
+    }
+    @media (min-width:$pc){
+      grid-column: 6 / 12;
+      .hero_care & {
+        grid-column: 7 / 12;
+      }
+    }
+    @media (max-width:$pc){
+      img {
+        max-width: 100%;
+      }
+    }
+    @media (max-width:$mobileSmall){
+      align-self: stretch;
+      margin: 0 rem(-15);
+      padding-left: rem(22);
+      img {
+        width: 100%;
+      }
+
+      .experience_index & {
+        padding-left: 0;
+        img {
+          max-width: calc(100% - rem(20));
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &__button {
+    text-transform: none;
+    .experience_index &,
+    .hero_care & {
+      @media (max-width:$mobile){
+        width: calc(100% - rem(15));
+        margin: rem(30) rem(15) rem(-30) rem(-7.5);
+      }
+    }
+
+    .experience_index & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(26 , 14);
+        width: calc(100% - rem(30));
+        margin: rem(30) rem(15) rem(-30) rem(15);
+      }
+    }
+  }
+}

@@ -1,0 +1,333 @@
+.club {
+  position: relative;
+  &.club_anifreeze_2 {
+    @media (min-width:$pc){
+      min-height: rem(780);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      @media (min-width:$mobile){
+        width: rem(1920);
+        height: rem(780);
+        min-height: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__auto {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    @media (min-width:$pc){
+      img {
+        max-width: 68vw;
+        height: 100%;
+      }
+    }
+    @media (min-width:$mobile){
+      left: -5%;
+      top: 0;
+    }
+    @media (max-width:$pc) and (min-width:$mobile) {
+      display: none;
+    }
+    @media (max-width:$mobile){
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    align-items: center;
+    @include adaptiveValue("padding-top", 174, 40, 1300, 480, 1);
+    @include adaptiveValue("padding-bottom", 94, 48, 1300, 480, 1);
+    .club_pb & {
+      padding-bottom: 0;
+      @include adaptiveValue("padding-top", 93, 73, 1300, 480, 1);
+    }
+    .club_anifreeze_2 & {
+      @include adaptiveValue("padding-top", 116, 40, 1300, 480, 1);
+      @include adaptiveValue("padding-bottom", 88, 47, 1300, 480, 1);
+    }
+    @media (min-width:$pc){
+      max-height: rem(780);
+      box-sizing: border-box;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    @media (max-width:$pc) and (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width:$mobile){
+      align-items: center;
+    }
+    @media (max-width:$mobile){
+      display: flex;
+      flex-direction: column-reverse;
+      gap: rem(58);
+    }
+  }
+
+  &__image {
+    @media (min-width:$pc){
+      .club_half &,
+      .club_half_2 &{
+        img {
+          max-width: 135%;
+        }
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+    @media (min-width:$tablet){
+      grid-row: 1 / 2;
+    }
+    @media (min-width:$pc){
+      grid-column: 1 / 7;
+      min-height: rem(512);
+    }
+    @media (max-width:$mobileSmall){
+      margin: 0 rem(-15);
+      align-self: stretch;
+      padding-left: rem(22);
+      .club_zero & {
+        margin-left: auto;
+      }
+      .club_anifreeze & {
+        padding-left: 0;
+      }
+      img {
+        width: 100%;
+        .club_zero & {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+
+      .club_index & {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__content {
+    line-height: math.div(54 , 38);
+    max-width: rem(570);
+    @media (min-width:$tablet){
+      grid-row: 1 / 2;
+    }
+    @media (min-width:$pc){
+      grid-column: 6 / -1;
+      .club_half & {
+        grid-column: 8 / 12;
+      }
+      .club_half_2 & {
+        grid-column: 8 / -1;
+      }
+      .club_anifreeze_2 & {
+        grid-column: 9 / -1;
+      }
+    }
+    
+    .club_zero & {
+      max-width: rem(650);
+    }
+    @media (max-width:$mobileSmall){
+      line-height: math.div(32 , 24);
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 38, 24, 1300, 480, 1);
+    &:not(:last-child) {margin-bottom: rem(12);}
+    .club_half & {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 60, 20, 1300, 480, 1);
+      }
+    }
+    .club_anifreeze & {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 40, 0, 1300, 480, 1);
+      }
+    }
+
+    &_mb {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 40, 20, 1300, 480, 1);
+      }
+    }
+
+    .club_zero & {
+      @include adaptiveValue("font-size", 48, 24, 1300, 480, 1);
+      line-height: math.div(62.4 , 48);
+      @media (min-width:$mobile){
+        text-transform: none;
+      }
+      @media (max-width:$mobile){
+        font-weight: 300;
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .club_index & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(49.4 , 38);
+      }
+    }
+
+    .club_care_2 & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(53.2 , 38);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 24);
+      }
+    }
+
+    .club_care & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(53.2 , 38);
+      }
+    }
+  }
+
+  &__supertitle {
+    @include adaptiveValue("font-size", 74, 34, 1300, 480, 1);
+    text-transform: uppercase;
+    @media (max-width:$mobile){
+      font-weight: 700;
+    }
+    
+    .club_zero_2 & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(103.6 , 74);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(47.6 , 34);
+      }
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 32, 20, 1300, 480, 1);
+    @media (min-width:$mobileSmall){
+      &:not(:last-child) {margin-bottom: rem(40);}
+    }
+    &_up {
+      @media (min-width:$mobile){
+        text-transform: uppercase;
+      }
+    }
+    .club_half & {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    }
+
+    .club_zero & {
+      line-height: math.div(44.8 , 32);
+      @media (max-width:$mobile){
+        line-height: math.div(24 , 20);
+      }
+    }
+
+    .club_zero_2 & {
+      @include adaptiveValue("font-size", 28, 20, 1300, 480, 1);
+      @media (min-width:$mobileSmall){
+        line-height: math.div(44.8 , 28);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+
+    .club_long & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+    .club_index & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(24 , 20);
+      }
+    }
+  }
+
+  &__smalltext {
+    @include adaptiveValue("font-size", 18, 14, 1300, 480, 1);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 20, 1300, 480, 1);
+    }
+    .club_half_2 & {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    }
+    
+    .club_index & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(21.6 , 18);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(16.8 , 14);
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    .club_half & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(26 , 18);
+      }
+      @media (max-width:$tablet){
+        width: calc(100% - rem(22));
+        text-align: center;
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(21.6 , 18);
+      }
+    }
+    .club_anifreeze &,
+    .club_index & {
+      font-size: rem(18);
+      @media (max-width:$tablet){
+        width: calc(100% - rem(30));
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .club_index & {
+      @media (max-width:$mobileSmall){
+        font-size: rem(14);
+        line-height: math.div(26 , 14);
+      }
+    }
+  }
+}

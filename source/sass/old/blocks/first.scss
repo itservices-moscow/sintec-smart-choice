@@ -1,0 +1,99 @@
+@use "../global/variable.scss" as var;
+
+.first {
+  position: relative;
+  padding: 70px 0 0 0;
+  margin: 0 0 -22px 0;
+  background-image: url("../img/antifreeze/bg-first-mobile@1x.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/antifreeze/bg-first-mobile@2x.webp");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    padding: 140px 0 0 0;
+    background-image: url("../img/antifreeze/bg-first-desktop@1x.webp");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/antifreeze/bg-first-desktop@2x.webp");
+    }
+  }
+}
+
+.first__title {
+  margin: 0 0 160px 0;
+
+  @media (min-width: var.$tablet-width) {
+    max-width: 385px;
+    justify-self: center;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    justify-self: start;
+  }
+}
+
+.first__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    grid-column: 8 / -1;
+    grid-row: 1 / -1;
+    margin: -70px 0 0 0;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 9 / -1;
+    justify-self: unset;
+    margin: -200px 0 0 20px;
+  }
+}
+
+.first__img {
+  display: block;
+  width: auto;
+  min-height: 365px;
+  margin: 0 auto;
+
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0 0 0 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 610px;
+  }
+}
+
+.first__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.first__picture-wrapper {
+  margin: 0 -15px 0 -35px;
+
+  @media (min-width: var.$tablet-width) {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    justify-self: center;
+    margin: 0 0 0 -150px;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 9;
+    justify-self: unset;
+    margin: 0 0 0 -242px;
+  }
+}

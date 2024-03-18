@@ -1,0 +1,39 @@
+.experience {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+  }
+
+  &__container {
+    color: #fff;
+    @include adaptiveValue("padding-top", 151, 80, 1300, 480, 1);
+    @include adaptiveValue("padding-bottom", 107, 63, 1300, 480, 1);
+    @media (min-width:$mobile){
+      gap: rem(47);
+    }
+    @media (max-width:$mobile){
+      gap: rem(72);
+      text-align: left;
+      .hero__content {
+        margin: 0 rem(-1);
+      }
+      .hero__text {
+        font-size: rem(24);
+        .experience_long & {
+          line-height: math.div(32 , 24);
+        }
+      }
+    }
+  }
+}

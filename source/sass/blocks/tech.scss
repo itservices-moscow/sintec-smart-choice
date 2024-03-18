@@ -1,0 +1,175 @@
+.tech {
+  position: relative;
+  @media (min-width:$pc){
+    min-height: rem(780);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    @include adaptiveValue("padding-top", 195, 40, 1300, 480, 1);
+    @include adaptiveValue("padding-bottom", 192, 66, 1300, 480, 1);
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue("gap", 144, 32, 1300, 480, 1);
+    .tech__slide & {
+      @include adaptiveValue("padding-top", 195, 84, 1300, 480, 1);
+    }
+  }
+
+  &__image {
+    img {
+      @include adaptiveValue("max-width", 380, 234, 1300, 480, 1);
+    }
+    @media (min-width:$mobile){
+      margin-left: auto;
+    }
+    @media (max-width:$mobile){
+      &:not(:last-child) {margin-bottom: rem(8);}
+    }
+  }
+
+  &__content {
+    @media (min-width:$mobile){
+      max-width: rem(573);
+    }
+    @media (max-width:$mobile){
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+    }
+  }
+
+  &__annotation {
+    line-height: math.div(45 , 28);
+    @include adaptiveValue("font-size", 28, 20, 1300, 480, 1);
+    text-transform: uppercase;
+
+    .tech_care & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(44.8 , 28);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 20);
+      }
+    }
+    .tech_index &,
+    .tech_long & {
+      @media (min-width:$mobileSmall){
+        line-height: math.div(44.8 , 28);
+      }
+      @media (max-width:$mobileSmall){
+        line-height: math.div(32 , 20);
+      }
+    }
+  }
+
+  &__title {
+    line-height: math.div(84 , 60);
+    font-weight: 600;
+    @include adaptiveValue("font-size", 60, 32, 1300, 480, 1);
+    @media (max-width:$mobile){
+      &:not(:last-child) {margin-bottom: rem(8);}
+    }
+    .tech_care & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+    }
+    .tech_index & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+    }
+
+    .tech_long & {
+      @media (max-width:$mobileSmall){
+        line-height: math.div(38.4 , 32);
+      }
+    }
+  }
+
+  &__text {
+    line-height: math.div(21.6 , 18);
+    @include adaptiveValue("font-size", 18, 14, 1300, 480, 1);
+    @media (max-width:$mobile){
+      &:not(:last-child) {margin-bottom: rem(8);}
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    @include adaptiveValue("top", 122, 28, 1300, 480, 1);
+    z-index: 3;
+  }
+}
+
+.nav-tech {
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: rem(15);
+    width: 100%;
+    justify-content: space-between;
+    @media (min-width:$pc){
+      max-width: rem(573);
+    }
+  }
+
+  &__pagination {
+    font-weight: 700;
+    line-height: math.div(32 , 20);
+    @include adaptiveValue("font-size", 20, 16, 1300, 480, 1);
+    span {
+      color: #E2000F;
+      @include adaptiveValue("font-size", 28, 20, 1300, 480, 1);
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    @include adaptiveValue("gap", 15, 10, 1300, 480, 1);
+    .splide__arrow {
+      @include adaptiveValue("width", 58, 38, 1300, 480, 1);
+
+      &:not([disabled]) {
+        circle {
+          stroke: #E2000F;
+        }
+        path {
+          fill: #E2000F;
+        }
+      }
+    }
+    svg {
+      max-width: 100%;
+      aspect-ratio: 1;
+      >*{
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+}

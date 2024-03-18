@@ -1,0 +1,132 @@
+@use "../global/variable.scss" as var;
+
+.brand {
+  padding: 40px 0 38px 0;
+  margin: 0 0 -50px 0;
+  background-image: url("../img/long/brand-bg-mobile@1x.webp");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/long/brand-bg-mobile@2x.webp");
+  }
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+    padding: 40px 0 64px 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    background-image: url("../img/long/brand-bg-desktop@1x.webp");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/long/brand-bg-desktop@2x.webp");
+    }
+  }
+
+  .main-header__logo-img {
+    width: 93px;
+    height: 50px;
+  }
+}
+
+.brand__title {
+  margin: 26px 0 20px 0;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0 0 20px 0;
+    text-align: left;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+.brand__lead {
+  max-width: 330px;
+  margin: 0 auto 40px auto;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0;
+    text-align: left;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    max-width: 600px;
+    font-size: 38px;
+    line-height: 54px;
+  }
+}
+
+.brand__text-wrapper {
+  @media (min-width: var.$tablet-width) {
+    // margin: -70px 0 0 0;
+    justify-self: center;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 1 / 7;
+    grid-row: 1 / -1;
+    justify-self: unset;
+    // margin: -50px 0 0 5px;
+  }
+}
+
+.brand__img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 392px;
+  
+  object-position: left center;
+  overflow: visible;
+
+  @media (min-width: var.$tablet-width) {
+    margin: 0 0 0 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    min-height: 576px;
+  }
+}
+
+.brand__wrapper {
+  @media (min-width: var.$tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    column-gap: 70px;
+    margin: 0;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 5px;
+  }
+}
+
+.brand__picture-wrapper {
+  margin: 0 -15px;
+
+  @media (min-width: var.$tablet-width) {
+    justify-self: center;
+    margin: 0 0 0 -110px;
+  }
+
+  @media (min-width: var.$desktop-width) {
+    grid-column: 7 / -1;
+    grid-row: 1 / -1;
+    justify-self: unset;
+    margin: 0 0 0 10px;
+  }
+}

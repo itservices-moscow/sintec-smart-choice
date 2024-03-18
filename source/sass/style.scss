@@ -1,30 +1,204 @@
-@use "global/global.scss";
-@use "global/fonts.scss";
-@use "blocks/page.scss";
-@use "blocks/page-body.scss";
-@use "blocks/container.scss";
-@use "blocks/main-header.scss";
-@use "blocks/title.scss";
-@use "blocks/lead.scss";
-@use "blocks/message.scss";
-@use "blocks/quality.scss";
-@use "blocks/button.scss";
-@use "blocks/assortment.scss";
-@use "blocks/technology.scss";
-@use "blocks/expert.scss";
-@use "blocks/main-footer.scss";
-@use "blocks/case-header.scss";
-@use "blocks/alkali.scss";
-@use "blocks/stability.scss";
-@use "blocks/molybdenum.scss";
-@use "blocks/antiwear.scss";
-@use "blocks/antifreeze-header.scss";
-@use "blocks/line.scss";
-@use "blocks/anti-corrosion.scss";
-@use "blocks/first.scss";
-@use "blocks/time.scss";
-@use "blocks/brand.scss";
-@use "blocks/base.scss";
-@use "blocks/history.scss";
-@use "blocks/oil-club.scss";
-@use "blocks/non-fake.scss";
+@use "sass:math";
+
+// Подключение миксинов ===========================================================================================================================================================================================================================================================================
+@import "base/mixins";
+
+// Подключение шрифтов ===========================================================================================================================================================================================================================================================================
+@font-face {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/gotham-regular.woff2"),
+    url("../fonts/gotham-regular.woff");
+  font-display: swap;
+}
+
+//&display=swap - добавить при подключении через плагин
+
+// Подключить если есть локальные файлы шрифтов
+//@import "fonts/fonts";
+
+// Подключение иконочных шрифтов ==============================================================================================================================================================================================================================================================================
+// Подключить если есть файл иконочного шрифта
+//@import "fonts/icons";
+
+// Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
+$fontFamily: "Gotham";
+$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+
+// Основные цвета
+$mainColor: #272424; // Цвет шрифта по умолчанию
+$purpleGradient: linear-gradient(86.27deg, #A400CD 0%, #D33883 100%);
+$purpleGradientHv: linear-gradient(271.52deg, #A400CD 0.19%, #D33883 100%);
+$purpleShadow: 0px 20px 40px rgba(120, 0, 150, 0.7);
+
+// НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1300;
+$maxWidthContainerMfz: 1170;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
+@import "base/null";
+
+body {
+	// Скролл заблокирован
+	.lock & {
+		overflow: hidden;
+		touch-action: none;
+	}
+	// Сайт загружен
+	.loaded & {
+	}
+}
+// Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+  position: relative;
+
+  &_mfz {
+    font-family: 'Mulish';
+  }
+
+	// Прижимаем footer
+	> main {
+		flex: 1 1 auto;
+	}
+	// Фикс для слайдеров
+	> * {
+		min-width: 0;
+	}
+}
+
+.page_zero {
+  @media (min-width:$mobile){
+    font-family: 'Gotham Pro' !important;
+  }
+}
+// Ограничивающий контейнер ======================================================================================================================================================================================================================
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+	// Отзывчивая
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	[class*="__container"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}
+
+@if ($responsiveType==1) {
+	// Отзывчивая
+	[class*="__mfzcontainer"] {
+		@if ($maxWidthContainerMfz>0) {
+			max-width: rem($maxWidthContainerMfz);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	[class*="__mfzcontainer"] {
+		margin: 0 auto;
+		@if ($maxWidthContainerMfz>0) {
+			max-width: rem($maxWidthContainerMfz);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainerMfz>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}
+
+// Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
+// Для подключения/отключения конкретных стилей смотри base.scss
+@import "base";
+
+// Подключение стилей общих элементов проекта
+@import "common";
+
+// Подключение стилей отдельных блоков
+@import "header";
+@import "footer";
+
+
+@import "blocks/hero.scss";
+@import "blocks/tech.scss";
+@import "blocks/experience.scss";
+@import "blocks/club.scss";
+// Подключение стилей отдельных страниц
+@import "multifreeze";

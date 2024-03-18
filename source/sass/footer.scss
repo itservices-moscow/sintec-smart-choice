@@ -1,0 +1,55 @@
+//====================================================================================================
+.footer {
+  background-color: #005BFF;
+  color: #fff;
+
+  &__container {
+    @include adaptiveValue("padding-top", 80, 40, 1300, 480, 1);
+    @include adaptiveValue("padding-bottom", 80, 40, 1300, 480, 1);
+    @include adaptiveValue("gap", 40, 20, 1300, 480, 1);
+    display: flex;
+    align-items: center;
+    @media (max-width:$mobile){
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    line-height: math.div(32 , 24);
+    @include adaptiveValue("font-size", 38, 24, 1300, 480, 1);
+    @media (min-width:$mobile){
+      white-space: nowrap;
+      line-height: math.div(54 , 38);
+    }
+  }
+
+  &__image {
+    svg {
+      max-width: 100%;
+    }
+    @media (max-width:$mobile){
+      width: 100%;
+      svg, rect {
+        width: 100%;
+      }
+    }
+    * {
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        rect {
+          fill: transparent;
+          stroke: #fff;
+        }
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+//====================================================================================================
